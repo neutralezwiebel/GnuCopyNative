@@ -1,0 +1,47 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400"  
+        x:Class="Project1.pages.SettingWindow"
+        xmlns:viewmodels="using:Project1.Viewmodels"
+        x:DataType="viewmodels:SettingsViewmodel"
+        Title="SettingsWindow" Height="420" Width="470" Icon="../Assets/settings.png" CanResize="False" x:CompileBindings="True" 
+        Closed="TopLevel_OnClosed">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="160"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="70"></ColumnDefinition>
+                <ColumnDefinition Width="120"></ColumnDefinition>
+               
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="130"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" Margin="9,5" Orientation="Vertical">
+                <CheckBox IsChecked="{Binding Clearforchecked}" Name="Clearforcopy" Checked="Clearforcopy_OnChecked" Unchecked="Clearforcopy_OnUnchecked">Clear for copy</CheckBox>
+                <CheckBox IsChecked="{Binding Clearafterchecked}" Name="Clearaftercopy" Unchecked="Clearaftercopy_OnUnchecked" Checked="Clearaftercopy_OnChecked">Delete after copy</CheckBox>
+            </StackPanel>
+            <StackPanel Grid.Column="4" Grid.Row="1">
+                <Image Source="../Assets/Gpl3Ico.png"></Image>
+                <Image Source="../Assets/GithubIco.png"></Image>
+            </StackPanel>
+            <StackPanel Grid.Column="4" Grid.Row="3" Height="110">
+                <Label Foreground="#7cc1fb" Content="Contributors" Tapped="Contributors_OnTapped"></Label>
+                <Label Content="Github" Tapped="Github_OnTapped" Foreground="#7cc1fb"></Label>
+                <Label Content="License" Tapped="License_OnTapped" Foreground="#7cc1fb"></Label>
+                <Label Content="Contact" Tapped="Contact_OnTapped" Foreground="#7cc1fb"></Label>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+                <Image Source="../Assets/Onionware.png"></Image>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
